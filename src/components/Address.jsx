@@ -26,11 +26,6 @@ const Address = () => {
     })
     const location = useLocation()
 
-    const handleClick = (id) => {
-        setSelectedFormData(listAddress[id])
-        setShowSlide(true)
-    }  
-
     const handleDel = (id) => {
         setListAddress(prev => prev.filter((_, index) => index !== id))
     }
@@ -128,9 +123,6 @@ const Address = () => {
                                 >
                                     -
                                 </button>
-                                <div className=' adBtn modeD' onClick={() => handleClick(index)}>
-                                    <img src={rightA} className="arrowAd" />
-                                </div>
                             </div>
                         </div>
                     ))}

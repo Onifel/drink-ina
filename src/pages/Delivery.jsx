@@ -3,12 +3,16 @@ import leftArrow from '../assets/icons/left-arrow.png'
 import CartIcon from "../components/CartIcon"
 import Selections from "../components/Selections"
 import { title } from "../jsFile/List"
+import Cart from '../motionPages/Cart';
+import { useState } from 'react';
+
 
 const Delivery = () => {
   const location = useLocation()
   const navigate = useNavigate()
   const { prefId, storeId } = useParams()
   const storeIndex = parseInt(storeId)
+  const [showCart, setShowCart] = useState(false)
 
   const getModeId = () => {
     if (location.pathname.includes("/pick/0/")) return 1;
@@ -36,9 +40,10 @@ const Delivery = () => {
               </div>
               <span className="headDelP">{title[modeId]?.name || 'Delivery'}</span>     
             </h1>
-            <CartIcon />
+            <CartIcon onClick={() => setShowCart(true)}/>
           </div>
           <Selections />
+          {showCart && <Cart onClose={() => setShowCart(false)} />}
     </div>
   )
 }

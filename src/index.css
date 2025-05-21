@@ -373,17 +373,20 @@ body.dark .modeD {
 }
 
 .divCart {
-  display: flex;
-  flex-direction: column;
   position: fixed;
   top: 0;
-  left: 29.39rem;
+  display: flex;
+  flex-direction: column;
   width: 500px;
   height: 100%;
   z-index: 999;
   overflow-y: auto;
   background-image: url('./assets/bg/6.jpg');
+  background-position: center;
+  background-size: cover;
 }
+
+
 
 .contCart {
   padding: 40px 40px 0px 20px;
@@ -397,18 +400,26 @@ body.dark .modeD {
 }
 
 .divCartIcon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
   z-index: 999;
 }
 
 .btnCart {
-  position: fixed;
-  top: 1rem;
-  right: 23rem;
   border: none;
   background-color: transparent;
-  margin-top: 5px;
-  margin-right: 120px;
   text-align: center;
+}
+
+.divBtnCart {
+  position: absolute;
+  bottom: 2.8rem;
+  left: 4%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  width: 460px;
 }
 
 .cartImg {
@@ -1309,9 +1320,9 @@ body.dark .modeD {
 }
 
 .popup-content {
-  position: fixed;
+  position: absolute;
   top: 35%;
-  left: 41.5%;
+  left: 28%;
   transform: translate(-50%, -50%);
   background: white;
   padding: 2rem;

@@ -2,12 +2,15 @@ import { useNavigate, useParams } from 'react-router-dom'
 import CartIcon from '../components/CartIcon'
 import leftArrow from '../assets/icons/left-arrow.png'
 import { pickPref, stores } from '../jsFile/List';
+import Cart from '../motionPages/Cart';
+import { useState } from 'react';
 
 const PickupSelect = () => {
     const {id} = useParams()
     const store = stores[parseInt(id)]
     const nameStore = store?.name
     const navigate = useNavigate()
+    const [showCart, setShowCart] = useState(false)
 
     const handleSelPick = (prefId) => {
         navigate(`/pick/${prefId}/${id}`)
@@ -30,7 +33,8 @@ const PickupSelect = () => {
                         store && <span className='headDelP'>{nameStore}</span>
                     }      
                 </h1>
-                <CartIcon />
+                <CartIcon onClick={() => setShowCart(true)}/>
+            {showCart && <Cart onClose={() => setShowCart(false)} />}
             </div>
             <h4 className='titlePick'>Pickup Preference</h4>
             <div className='container'>

@@ -1,4 +1,3 @@
-import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { removeCart, selectSubtotal } from '../jsFile/cartSlice'
 import { AnimatePresence, motion } from "framer-motion";
@@ -102,6 +101,9 @@ const Cart = ({onClose}) => {
                             )
                         })
                     }
+                    <div className="divBtnCart">
+                        <button className='btnHero' onClick={handleCheck}>Checkout</button>
+                    </div>
                 </>
                 
                 ) : (
@@ -124,16 +126,7 @@ const Cart = ({onClose}) => {
                 </div>
             </div>
 
-            <div className="divBtn">
-                <button className='btnHero' onClick={handleCheck}>Checkout</button>
-            </div>
-
-            {showSlide && (
-                <Checkout onClose={() => {
-                    setShowSlide(false)
-                    setIsVisible(true)
-                }}/>
-            )}
+            {showSlide && <Checkout />}
         </motion.div>
       )}
     </AnimatePresence>

@@ -9,9 +9,8 @@ import { useState } from "react"
 import CardPay from "./CardPay"
 import { AnimatePresence, motion } from "framer-motion"
 import TipAmount from "./TipAmount"
-import { useNavigate } from 'react-router-dom'
 
-const Checkout = ({onClose = () => {}}) => {
+const Checkout = () => {
     const [isVisible, setIsVisible] = useState(true)
     const subtotal = useSelector(selectSubtotal)
     const tax = subtotal * 0.06
@@ -21,7 +20,6 @@ const Checkout = ({onClose = () => {}}) => {
     const dispatch = useDispatch()
     const [showSlide, setShowSlide] = useState(false)
     const [showCardPay, setShowCardPay] = useState(false)
-    const navigate = useNavigate()
 
     const slideVariants = {
         hidden: { x: "100vh", opacity: 0 },

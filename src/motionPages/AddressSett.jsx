@@ -32,11 +32,6 @@ const AddressSett = ({onClose}) => {
         hidden: { x: "100vh", opacity: 0 },
         visible: { x: "0", opacity: 1 },
         exit: { x: "100vh", opacity: 0 },
-    }
-
-    const handleClick = (id) => {
-        setSelectedFormData(listAddress[id])
-        setShowSlide(true)
     }      
 
     const handleDel = (id) => {
@@ -92,6 +87,12 @@ const AddressSett = ({onClose}) => {
             setShowSlide(true); 
         })
     }, [])
+
+    useEffect(() => {
+        if (showAddress) {
+            setValue("")
+        }
+    }, [showAddress])
 
   return (
     <AnimatePresence>
@@ -155,13 +156,6 @@ const AddressSett = ({onClose}) => {
                                 >
                                     -
                                 </button>
-                                <div className=' adBtn modeD' onClick={() => handleClick(index)}>
-                                    <img 
-                                        src={rightArrow} 
-                                        className="arrowAd"
-                                        onClick={() => handleClick(index)}
-                                    />
-                                </div>
                             </div>
                         </div>
                     ))}

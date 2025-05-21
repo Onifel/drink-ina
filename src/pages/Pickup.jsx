@@ -4,6 +4,7 @@ import CartIcon from "../components/CartIcon"
 import { useState, useEffect } from "react"
 import { stores } from '../jsFile/List'
 import rightA from '../assets/icons/right-arrow.png'
+import Cart from '../motionPages/Cart';
 
 const getDistanceInMiles = (lat1, lon1, lat2, lon2) => {
   const R = 6371;
@@ -25,6 +26,7 @@ const Pickup = () => {
   const [sortedStores, setSortedStores] = useState([])
   const [hasFetched, setHasFetched] = useState(false)
   const navigate = useNavigate()
+  const [showCart, setShowCart] = useState(false)
 
   useEffect(() => {
     const withIndex = stores.map((store, i) => ({
@@ -90,7 +92,8 @@ const Pickup = () => {
               </div>
               <span className="headDelP">Select Pickup Location</span>     
             </h1>
-            <CartIcon />
+            <CartIcon onClick={() => setShowCart(true)}/>
+            {showCart && <Cart onClose={() => setShowCart(false)} />}
           </div>
           <div className="pageBg">
             <div className="container">
