@@ -89,7 +89,7 @@ const Address = () => {
   return (
     <>
         <div className="contAddress pageBg">
-            <h2 className="mb-3">Delivery Address</h2>
+            <h2 className="textPay">Delivery Address</h2>
             <input
                 ref={inputRef} 
                 className="inputAddress" 
@@ -99,17 +99,20 @@ const Address = () => {
             />
 
             {showAddress && (
-                <div className="mt-2">
+                <div className="adAd">
                     {listAddress.map((address, index) => (
-                        <div key={index} className="mt-3">
-                            <h6>{address.name}</h6>
-                            <p className="street">{address.street} {""} {address.apt}</p>
-                            <div className="itemAd">
+                        <div key={index} className="adBar">
+                            <div className="adSt">
+                                <h6>{address.name}</h6>
+                                <p className="street">{address.street} {""} {address.apt}</p>
                                 <p className="state">
                                     {address.city}, {""}
                                     {address.state} {""}
                                     {address.zip} 
                                 </p>
+                            </div>
+                            
+                            <div className="itemAd">
                                 {address.default === true ? 
                                     (
                                         <p className="defaultAd">

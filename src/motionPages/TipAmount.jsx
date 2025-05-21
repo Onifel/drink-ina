@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setTip } from "../jsFile/checkoutSlice";
 
-const TipAmount = () => {
+const TipAmount = ({onClose}) => {
     const [isVisible, setIsVisible] = useState(true)
     const [amount, setAmount] = useState(0)
     const navigate = useNavigate()
@@ -13,6 +13,9 @@ const TipAmount = () => {
 
     const handleClose = () => {
         setIsVisible(false);
+        setTimeout(() => {
+            onClose()
+        }, 400);
     }
     
     const slideVariants = {
@@ -24,11 +27,14 @@ const TipAmount = () => {
     const handleTipAmount = () => {
         const tipValue = parseFloat(amount) || 0
         dispatch(setTip(tipValue))
-        navigate('/checkout')
+        setIsVisible(false);
+        setTimeout(() => {
+            onClose()
+        }, 400);
     }
 
   return (
-    <AnimatePresence onExitComplete={() => navigate('/checkout')}>
+    <AnimatePresence>
       {isVisible && (
         <motion.div
           className="divM pageBg"
@@ -36,19 +42,11 @@ const TipAmount = () => {
           initial="hidden"
           animate="visible"
           exit="exit"
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.4 }}
         >
             <button
                 onClick={handleClose}
-                style={{
-                    position: "absolute",
-                    top: "1rem",
-                    right: "1rem",
-                    background: "transparent",
-                    border: "none",
-                    fontSize: "1.5rem",
-                    cursor: "pointer"
-                }}
+                className='closeBtn modeDark'
             >
                 &times;
             </button>
@@ -56,8 +54,8 @@ const TipAmount = () => {
                 <img src={driver} className="imgDriver" />
             </div>
             <h3>Enter a tip amount</h3>
-            <p>Tips are appreciated, and 100% of your tip will go to our hard-</p>
-            <p className="paraA">working drivers.</p>
+            <p>Tips are appreciated, and 100% of your tip will go to our </p>
+            <p className="paraA">hard-working drivers.</p>
             <input 
                 type="text" 
                 className="inputAddress" 

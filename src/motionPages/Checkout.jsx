@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom"
 import leftArrow from '../assets/icons/left-arrow.png'
 import { useDispatch, useSelector } from "react-redux"
 import { selectSubtotal } from "../jsFile/cartSlice"
@@ -9,17 +8,20 @@ import { setTip } from "../jsFile/checkoutSlice"
 import { useState } from "react"
 import CardPay from "./CardPay"
 import { AnimatePresence, motion } from "framer-motion"
+import TipAmount from "./TipAmount"
+import { useNavigate } from 'react-router-dom'
 
-const Checkout = ({onDismiss = () => {}}) => {
+const Checkout = ({onClose = () => {}}) => {
     const [isVisible, setIsVisible] = useState(true)
     const subtotal = useSelector(selectSubtotal)
     const tax = subtotal * 0.06
     const deliveryFee = 5
     const tip = useSelector(selectTip)
     const total = subtotal + tax + deliveryFee + tip
-    const navigate = useNavigate()
     const dispatch = useDispatch()
+    const [showSlide, setShowSlide] = useState(false)
     const [showCardPay, setShowCardPay] = useState(false)
+    const navigate = useNavigate()
 
     const slideVariants = {
         hidden: { x: "100vh", opacity: 0 },
@@ -28,7 +30,15 @@ const Checkout = ({onDismiss = () => {}}) => {
       }
 
     const handleTip = () => {
-        navigate('/tipAmount')
+        setShowSlide(true)
+    }
+
+    const handleBack = () => {
+        if (showSlide) {
+           setShowSlide(false)
+        }else{
+            setIsVisible(false)
+        }
     }
 
     const handlePay = () => {
@@ -47,13 +57,8 @@ const Checkout = ({onDismiss = () => {}}) => {
             className="slideCheck pageBg"
             >
                 <div className={`checkTitles checkoutContent ${showCardPay ? 'blurred' : ''}`}>
-                    <h1>
-                    <div onClick={() => {
-                        setIsVisible(false)
-                        setTimeout(() => {
-                            onDismiss()
-                          }, 400)
-                    }}
+                    <h1 className="titles gap-3">
+                    <div onClick={handleBack}
                     >
                         <img src={leftArrow} className="arrow" />
                     </div>
@@ -108,6 +113,11 @@ const Checkout = ({onDismiss = () => {}}) => {
                     <div>
                         <p className="paraTip">100% of tips go to the drivers</p>
                     </div>
+
+                    {showSlide && (
+                        <TipAmount onClose={() => setShowSlide(false)}/>
+                    )}
+
                     <div className="d-flex mb-2">
                         <h4 className="total">Total</h4>
                         <h5>${total.toFixed(2)}</h5>
@@ -117,7 +127,7 @@ const Checkout = ({onDismiss = () => {}}) => {
                 <Address />
 
                 <div className="contPay">
-                    <h2 className="mb-3">Payment</h2>
+                    <h2 className="textPay">Payment</h2>
                     <button 
                         className="btnPay"
                         onClick={() => setShowCardPay(true)}

@@ -105,7 +105,7 @@ const Cart = ({onClose}) => {
                 </>
                 
                 ) : (
-                    <h1>Your Cart is Empty!</h1>
+                    <h4>Your Cart is Empty!</h4>
                 )
             }
 
@@ -129,7 +129,10 @@ const Cart = ({onClose}) => {
             </div>
 
             {showSlide && (
-                <Checkout onDismiss={() => setShowSlide(false)} />
+                <Checkout onClose={() => {
+                    setShowSlide(false)
+                    setIsVisible(true)
+                }}/>
             )}
         </motion.div>
       )}

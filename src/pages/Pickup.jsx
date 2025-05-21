@@ -83,7 +83,7 @@ const Pickup = () => {
   return (
     <>
           <div className="d-flex checkTitles">
-            <h1>
+            <h1 className="titles gap-3">
               <div onClick={handleBack}
               >
                   <img src={leftArrow} className="arrow" />
@@ -130,6 +130,7 @@ const Pickup = () => {
                   </div>
                 )}
             </div>
+            <div className="empty"></div>
           </div>
     </>
   )

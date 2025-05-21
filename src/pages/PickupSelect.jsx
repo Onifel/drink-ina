@@ -20,7 +20,7 @@ const PickupSelect = () => {
   return (
     <div className='pageBg pickSel'>
             <div className="d-flex checkTitles">
-                <h1>
+                <h1 className="titles gap-3">
                 <div 
                     onClick={handleBack}
                 >
@@ -49,6 +49,7 @@ const PickupSelect = () => {
                     })
                 }
             </div>
+            <div className="empty"></div>
     </div>
   )
 }

@@ -104,7 +104,9 @@ const Payment = ({onClose}) => {
                             <div className="cardSaved">
                                 <img src={pay.icon} className="iconCard"/>
                                 <p className="cardPara">{pay.name}</p>
-                                <img src={rightA} className="arrowLoc" />
+                                <div className='modeD'>
+                                    <img src={rightA} className="arrowLoc" />
+                                </div>
                             </div>
                         </div>
                         ))

@@ -29,7 +29,7 @@ const Delivery = () => {
   return (
     <div className="headDel">
           <div className="delTitles">
-            <h1>
+            <h1 className="titles gap-3">
               <div onClick={handleBack}
               >
                   <img src={leftArrow} className="arrow" />

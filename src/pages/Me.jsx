@@ -32,7 +32,7 @@ const Me = () => {
   }
 
   return (
-    <div className="pageBg">
+    <div className="contMe pageBg">
       <h3 className="headMe">Your name</h3>
       <div className="container">
         {

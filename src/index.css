@@ -1,6 +1,8 @@
 #root {
-  max-width: 1280px;
+  width: 500px;
   margin: 0 auto;
+  text-align: center;
+  box-shadow: 0px 0px 10px 100px #000;
 }
 
 body {
@@ -17,7 +19,7 @@ body.dark .pageBg {
   background-size: cover;
   background-position: center;
   color: #ffffff;
-  box-shadow: 0px 10px 50px 5px #fff;
+  box-shadow: 0px 0px 1px 1px #fff;
 }
 
 body.dark .modeDark {
@@ -31,6 +33,7 @@ body.dark .darkMode {
   position: absolute;
   top: 4px;
   right: 3px;
+  background-color: #f0c0bc;
 }
 
 body.dark .modeD {
@@ -47,9 +50,8 @@ body.dark .modeD {
 .head {
   position: fixed;
   top: 0;
-  left: 0;
   background-color: #fff;
-  width: 100%;
+  width: 500px;
   height: 111.8px;
   z-index: 999;
 }
@@ -58,17 +60,6 @@ body.dark .modeD {
   width: 150px;
   height: 150px;
   object-fit: contain;
-}
-
-.headTitle {
-  color: #fff;
-  font-family: 'title', sans-serif;
-}
-
-.headPara {
-  color: #fff;
-  font-family: 'para', sans-serif;
-  font-size: 30px;
 }
 
 .hero {
@@ -84,7 +75,7 @@ body.dark .modeD {
 .hero.fixed {
   position: fixed;
   top: 7rem;
-  width: 100%;
+  width: 500px;
 }
 
 .curve {
@@ -158,7 +149,7 @@ body.dark .modeD {
   justify-content: center;
   align-items: end;
   margin-top: 10px;
-  width: 100%;
+  width: 500px;
   padding: 0px 20px;
 }
 
@@ -174,28 +165,38 @@ body.dark .modeD {
 .learnM {
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
+  width: 500px;
   height: 100%;
   background: #fff;
   z-index: 999;
   overflow-y: auto;
   background-color: #dcb69f;
+  box-shadow: 0px 0px 10px 100px #000;
 }
 
-.moreLearn {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 20px;
+::-webkit-scrollbar {
+  width: 3px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(49, 49, 49, 0.5);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .foot {
   position: fixed;
   bottom: 0;
-  left: 0;
-  width: 100%;
+  width: 500px;
   height: 60px;
   background-color: #fff;
   display: flex;
@@ -333,7 +334,7 @@ body.dark .modeD {
 
 .empty {
   width: 100%;
-  height: 200px;
+  height: 315px;
 }
 
 .close {
@@ -377,8 +378,7 @@ body.dark .modeD {
 .divCart {
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
+  width: 500px;
   height: 100%;
   z-index: 999;
   overflow-y: auto;
@@ -387,6 +387,8 @@ body.dark .modeD {
 
 .contCart {
   padding: 40px 40px 0px 20px;
+  text-align: left;
+  margin-left: 20px;
 }
 
 .cartTitle {
@@ -397,17 +399,18 @@ body.dark .modeD {
 .divCartIcon {
   z-index: 999;
   position: fixed;
-  top: 10px;
+  top: 1rem;
+
 }
 
 .btnCart {
   position: fixed;
-  top: 1;
+  top: 1rem;
   right: 0;
   border: none;
   background-color: transparent;
   margin-top: 5px;
-  margin-right: 20px;
+  margin-right: 120px;
   text-align: center;
 }
 
@@ -462,21 +465,31 @@ body.dark .modeD {
 
 .headDel {
   position: fixed;
-  width: 100%;
+  width: 500px;
   height: 100vh;
   z-index: 999;
   padding: 20px 0px;
   background-color: #fffdf6;
   overflow-y: auto;
+  box-shadow: 0px 0px 10px 100px  #000;
 }
 
 .delTitles {
   position: fixed;
   background-color: #f0c0bc;
-  width: 100%;
+  width: 500px;
   height: 80px;
   padding-top: 20px;
   margin-top: -20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titles {
+  display: flex;
+  line-height: 30px;
+  margin-left: 10px;
 }
 
 .checkTitles {
@@ -516,7 +529,9 @@ body.dark .modeD {
 }
 
 .tab-content {
-  padding-top: 150px;
+  padding-top: 30px;
+  text-align: left;
+  padding-left: 20px;
 }
 
 .item {
@@ -526,8 +541,6 @@ body.dark .modeD {
 .arrow {
   width: 20px;
   height: 20px;
-  padding-bottom: 5px;
-  margin: 0 8px;
 }
 
 .arrowCheck {
@@ -563,7 +576,7 @@ body.dark .modeD {
   position: fixed;
   z-index: 999;
   bottom: 0;
-  width: 100%;
+  width: 500px;
   height: 100vh;
   background-color: #fff;
   border-top-left-radius: 1rem;
@@ -582,6 +595,7 @@ body.dark .modeD {
 
 .titleCheck {
   padding-top: 20px;
+  text-align: left;
 }
 
 .subtotal {
@@ -604,6 +618,10 @@ body.dark .modeD {
   margin-bottom: 20px;
 }
 
+.paraTip {
+  text-align: left;
+}
+
 .paraTip, .paraDollar, .street {
   font-size: 12px;
 }
@@ -613,9 +631,7 @@ body.dark .modeD {
 }
 
 .checkContainer {
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 20px;
+  padding: 5px 20px 0px 20px;
   border-bottom: 1px solid rgba(157, 156, 156, 0.3);
 }
 
@@ -633,6 +649,13 @@ body.dark .modeD {
   border: 1px solid #f0c0bc;
   border-radius: 10px;
   padding: 5px 10px;
+  margin-top: 20px;
+}
+
+.textPay {
+  text-align: left;
+  margin-top: 12px;
+  margin-bottom: 20px;
 }
 
 .btnPay {
@@ -650,13 +673,13 @@ body.dark .modeD {
   align-items: center;
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
+  width: 500px;
   height: 100%;
   background: #fff;
   z-index: 999;
   overflow-y: auto;
   padding: 2rem;
+  margin-left: -20px;
 }
 
 .imageD {
@@ -674,12 +697,12 @@ body.dark .modeD {
 }
 
 .street {
-  margin-top: -8px;
+  line-height: 10px;
 }
 
 .headFormAd {
   position: fixed;
-  width: 100%;
+  width: 500px;
   z-index: 999;
   background-color: #f0c0bc;
   padding: 20px 0px 60px 2px;
@@ -724,6 +747,23 @@ body.dark .modeD {
   padding-left: 10px;
 }
 
+.adAd {
+  text-align: left;
+  margin-top: 15px;
+}
+
+.adBar {
+  display: flex;
+}
+
+.adSt {
+  margin-right: auto;
+}
+
+.labelText {
+  text-align: left;
+}
+
 .checkbox {
   margin-right: 5px;
 }
@@ -731,7 +771,7 @@ body.dark .modeD {
 .state {
   font-size: 12px;
   margin-right: auto;
-  margin-top: -15px;
+  line-height: 0px;
 }
 
 .itemAd {
@@ -745,12 +785,10 @@ body.dark .modeD {
   font-size: 0.9rem;
   padding: 8px;
   margin-right: 15px;
-  margin-top: -30px;
   border-radius: 5px;
 }
 
 .adBtn {
-  margin-top: -50px;
   margin-left: 10px;
 }
 
@@ -768,7 +806,6 @@ body.dark .modeD {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -50px;
 }
 
 .btnPl {
@@ -798,7 +835,7 @@ body.dark .modeD {
   position: fixed;
   z-index: 999;
   bottom: 0;
-  width: 100%;
+  width: 500px;
   height: 50vh;
   background: white;
   border-top-left-radius: 1rem;
@@ -832,7 +869,7 @@ body.dark .modeD {
   position: fixed;
   bottom: 0;
   z-index: 999;
-  width: 100%;
+  width: 500px;
   height: 70vh;
   background: white;
   border-top-left-radius: 1rem;
@@ -961,6 +998,7 @@ body.dark .modeD {
 
 .titlePick {
   padding: 30px 0px 0px 20px;
+  text-align: left;
 }
 
 .headPick {
@@ -982,9 +1020,10 @@ body.dark .modeD {
 }
 
 .headDelP {
-  position: fixed;
-  margin-left: 50px;
-  margin-top: -35px;
+}
+
+.contMe {
+  padding-bottom: 20px;
 }
 
 .headMe {
@@ -1015,7 +1054,7 @@ body.dark .modeD {
   position: fixed;
   z-index: 999;
   bottom: 0;
-  width: 100%;
+  width: 500px;
   height: 100vh;
   background: white;
   border-top-left-radius: 1rem;
@@ -1023,19 +1062,21 @@ body.dark .modeD {
   background-image: url('./assets/bg/7.jpg');
   padding: 2rem;
   overflow-y: auto;
+  text-align: left;
 }
 
 .slideMeS {
   position: fixed;
   z-index: 999;
   bottom: 0;
-  width: 100%;
+  width: 500px;
   height: 100vh;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   background-image: url('./assets/bg/6.jpg');
   padding: 2rem;
   overflow-y: auto;
+  text-align: left;
 }
 
 .asideSett {
@@ -1062,7 +1103,7 @@ body.dark .modeD {
   position: fixed;
   z-index: 999;
   bottom: 0;
-  width: 100%;
+  width: 500px;
   height: 100vh;
   background-image: url('./assets/bg/6.jpg');
   border-top-left-radius: 1rem;
@@ -1213,7 +1254,7 @@ body.dark .modeD {
   position: fixed;
   z-index: 999;
   bottom: 0;
-  width: 100%;
+  width: 500px;
   height: 100vh;
   background-color: #fff;
   border-top-left-radius: 1rem;
@@ -1266,8 +1307,8 @@ body.dark .modeD {
 
 .popup-content {
   position: fixed;
-  top: 25%;
-  left: 25%;
+  top: 35%;
+  left: 30%;
   transform: translate(-50%, -50%);
   background: white;
   padding: 2rem;
@@ -1318,7 +1359,7 @@ body.dark .modeD {
   position: fixed;
   z-index: 999;
   bottom: 0;
-  width: 100%;
+  width: 500px;
   height: 100vh;
   background-image: url('./assets/bg/6.jpg');
   border-top-left-radius: 1rem;
@@ -1331,13 +1372,14 @@ body.dark .modeD {
   position: fixed;
   z-index: 999;
   bottom: 0;
-  width: 100%;
+  width: 500px;
   height: 100vh;
   background-color: #fff;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   padding: 2rem;
   overflow-y: auto;
+  text-align: left;
 }
 
 .medal {
@@ -1377,7 +1419,7 @@ body.dark .modeD {
   position: fixed;
   z-index: 999;
   bottom: 0;
-  width: 100%;
+  width: 500px;
   height: 100vh;
   background-image: url('./assets/bg/7.jpg');
   border-top-left-radius: 1rem;
@@ -1404,7 +1446,7 @@ body.dark .modeD {
   position: fixed;
   z-index: 999;
   bottom: 0;
-  width: 100%;
+  width: 500px;
   height: 100vh;
   background-color: #fff;
   border-top-left-radius: 1rem;
@@ -1445,12 +1487,12 @@ body.dark .modeD {
   position: fixed;
   z-index: 999;
   bottom: 0;
-  width: 100%;
+  width: 500px;
   height: 65vh;
   background: #fffcf0;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
-  margin: -32px;
+  margin-left: -32px;
 }
 
 .contOU {

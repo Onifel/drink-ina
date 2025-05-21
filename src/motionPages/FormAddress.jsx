@@ -18,7 +18,7 @@ const FormAddress = ({formData = {}, onClose, onAddressSelected}) => {
     
     const slideVariants = {
         hidden: { x: "100vh", opacity: 0 },
-        visible: { x: 0, opacity: 1 },
+        visible: { x: "0", opacity: 1 },
         exit: { x: "100vh", opacity: 0 },
     }
 
@@ -34,7 +34,7 @@ const FormAddress = ({formData = {}, onClose, onAddressSelected}) => {
           initial="hidden"
           animate="visible"
           exit="exit"
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.4 }}
           className="slideAdForm pageBg"
         >
             <div className="headFormAd">
@@ -107,7 +107,7 @@ const FormAddress = ({formData = {}, onClose, onAddressSelected}) => {
                     value={formDataState.instructions}
                     onChange={(e) => setFormDataState((prev) => ({ ...prev, instructions: e.target.value }))}
                 />
-                <label>
+                <label className="labelText">
                     <input
                         className="checkbox"
                         type="checkbox"

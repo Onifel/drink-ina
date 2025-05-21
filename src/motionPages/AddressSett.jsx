@@ -126,17 +126,20 @@ const AddressSett = ({onClose}) => {
             />
 
             {showAddress && (
-                <div className="mt-2">
+                <div className="adAd">
                     {listAddress.map((address, index) => (
-                        <div key={index} className="mt-3">
-                            <h6>{address.name}</h6>
-                            <p className="street">{address.street} {""} {address.apt}</p>
-                            <div className="itemAd">
+                        <div key={index} className="adBar">
+                            <div className="adSt">
+                                <h6>{address.name}</h6>
+                                <p className="street">{address.street} {""} {address.apt}</p>
                                 <p className="state">
                                     {address.city}, {""}
                                     {address.state} {""}
                                     {address.zip} 
                                 </p>
+                            </div>
+
+                            <div className="itemAd">
                                 {address.default === true ? 
                                     (
                                         <p className="defaultAd">
@@ -152,11 +155,13 @@ const AddressSett = ({onClose}) => {
                                 >
                                     -
                                 </button>
-                                <img 
-                                    src={rightArrow} 
-                                    className="arrowAd"
-                                    onClick={() => handleClick(index)}
-                                />
+                                <div className=' adBtn modeD' onClick={() => handleClick(index)}>
+                                    <img 
+                                        src={rightArrow} 
+                                        className="arrowAd"
+                                        onClick={() => handleClick(index)}
+                                    />
+                                </div>
                             </div>
                         </div>
                     ))}
