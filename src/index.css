@@ -2,10 +2,7 @@
   width: 500px;
   margin: 0 auto;
   text-align: center;
-  box-shadow: 0px 0px 10px 100px #000;
-}
-
-body {
+  box-shadow: 0px 0px 10px 1000px #000;
   position: relative;
 }
 
@@ -376,8 +373,11 @@ body.dark .modeD {
 }
 
 .divCart {
+  display: flex;
+  flex-direction: column;
   position: fixed;
   top: 0;
+  left: 29.39rem;
   width: 500px;
   height: 100%;
   z-index: 999;
@@ -398,15 +398,12 @@ body.dark .modeD {
 
 .divCartIcon {
   z-index: 999;
-  position: fixed;
-  top: 1rem;
-
 }
 
 .btnCart {
   position: fixed;
   top: 1rem;
-  right: 0;
+  right: 23rem;
   border: none;
   background-color: transparent;
   margin-top: 5px;
@@ -1020,6 +1017,7 @@ body.dark .modeD {
 }
 
 .headDelP {
+  font-size: 30px;
 }
 
 .contMe {
@@ -1034,6 +1032,10 @@ body.dark .modeD {
   align-items: center;
   background-color: #f0c0bc;
   
+}
+
+.containerMe {
+  padding-bottom: 50px;
 }
 
 .asideMe {
@@ -1268,6 +1270,7 @@ body.dark .modeD {
   position: absolute;
   top: 1rem;
   right: 2rem;
+  font-size: 30px;
 }
 
 .savedPmt {
@@ -1308,7 +1311,7 @@ body.dark .modeD {
 .popup-content {
   position: fixed;
   top: 35%;
-  left: 30%;
+  left: 41.5%;
   transform: translate(-50%, -50%);
   background: white;
   padding: 2rem;

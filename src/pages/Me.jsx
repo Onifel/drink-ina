@@ -34,7 +34,7 @@ const Me = () => {
   return (
     <div className="contMe pageBg">
       <h3 className="headMe">Your name</h3>
-      <div className="container">
+      <div className="containerMe container">
         {
           myAccount.map((acc, index) => (
             <div 

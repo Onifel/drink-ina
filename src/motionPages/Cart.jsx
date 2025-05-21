@@ -32,7 +32,7 @@ const Cart = ({onClose}) => {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className="d-flex flex-column divCart pageBg"
+          className="divCart pageBg"
           variants={slideVariants}
           initial="hidden"
           animate="visible"
